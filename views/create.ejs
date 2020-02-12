@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Book Store App</h3>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="/home">List All Books</a></li>
+                <li><a href="/delete">Delete a Book</a></li>
+                <li><a href="/create">Create a Book</a></li>
+            </ul>
+        </div>
+        <div class="container">
+          <h2>Create a new Book</h2>
+          <% if(error_msg){%>
+            <p style="color:red">Error: <%= error_msg %></p>
+          <%}%>
+          <form action='/create' method='post'>
+            <p>Book Id: </p>
+            <input type='number' name='BookID' value='' required='true'>  
+            <p>Title of the book: </p>
+            <input type='text' name='Title' value='' required='true'>
+            <p>Author: </p>
+            <input type='text' name='Author' value='' required='true'>
+            <br>
+            <br>
+            <input type='submit' value='save'>
+          </form>
+        </div>              
+    </body>
+</html>
